@@ -1,4 +1,4 @@
-package com.dbakshitnala.num;
+package com.dbakshintala.num;
 
 import java.math.BigInteger;
 
@@ -59,9 +59,23 @@ public class PrecedeNumProdAddition {
 	 */
 	public static void main(String[] args){
 		PrecedeNumProdAddition preNumProdAdd = new PrecedeNumProdAddition();
+				
+		String nrange = "5";
+		String precNum = "2";
 		
-		BigInteger numRange = new BigInteger("5");
-		BigInteger precNums = new BigInteger("2");
+		if (args.length == 0 )
+			System.out.println(" Number range and Preceding numbers are missing, "
+					+ "so result for NumRange 5 with 2 Preceding numbers is calculated");
+		
+		if(args.length >0 && !("".equals(args[0]))){
+			nrange = args[0];
+		}
+		if (args.length >1 && !("".equals(args[1]))){
+			precNum = args[1];
+		}
+		
+		BigInteger numRange = new BigInteger(nrange);
+		BigInteger precNums = new BigInteger(precNum);
 		
 		BigInteger result = preNumProdAdd.getSum(numRange, precNums);
 		System.out.println("result: "+result);
